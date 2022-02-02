@@ -1,6 +1,6 @@
 - name: My First Playbook
   hosts: all
-  become: yes
+  become: true
   vars_files:
     - "vars/additional_vars"
   tasks:
@@ -43,13 +43,13 @@
         state: present
 
 - name: Install Apache2 only on ansible_target1 machine (using roles)
-  hosts: ansible_target1
-  become: yes
+  hosts: all
+  become: true
   roles:
     - apache2-install
     
 - name: Install Apache2 only on target2 group of machines (using roles)
-  hosts: target2
-  become: yes
+  hosts: all
+  become: true
   roles:
     - apache2-install

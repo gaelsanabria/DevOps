@@ -1,0 +1,12 @@
+---
+- name: Hello World
+  hosts: localhost
+  remote_user: root
+  tasks:
+  - name: Update quote to Hello DevOps
+
+  - name: Modify quote to Hello DevOps
+    docker_image:
+      name: hello-world
+      tag: latest
+      state: present
